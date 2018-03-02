@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Trivia Game</title>
+</head>
+<body>
+    <!--Home Page -->
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">World War I Trivia</h1>
+                  <p class="lead">
+                    <h3 id="timerAlert"></h3>
+                  </p>
+                  <button type="button" class="btn btn-primary" id = "startthequiz">Start Quiz</button>
+                </div>
+              </div>
+    <!--Quiz Question -->
+ <div class = "container">
+    <div id = "quiz">
+        
+        <div class ="row">
+            <h4 id ="timer"></h4>
+            
+        </div>
+        
+        <br>
+        <div class ="row">
+            <h3 id = "questionNumber"></h3>
+        </div>
+
+        <div class = "row">
+         <br>
+            <h3 id = "question"> </h3>
+        </div>
+        
+        <div class = "row"> 
+            
+            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary btn-lg answerbutton" id = "answer1">1</button>
+                <br>
+                <button type="button" class="btn btn-primary btn-lg answerbutton" id = "answer2">2</button>
+                <br>
+                <button type="button" class="btn btn-primary btn-lg answerbutton" id = "answer3">3</button>
+                <br>
+                <button type="button" class="btn btn-primary btn-lg answerbutton" id = "answer4">4</button>
+                <br>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div id = "scoreboard">
+        <h2 id ="numbercorrect"></h2>
+        <h2 id ="numberwrong"></h2>
+        <br> 
+        <h3 id ="listheading"></h3>
+        <ol>
+            <li id = "FirstCorrect"></li>
+            <li id = "SecondCorrect"></li>
+            <li id = "ThirdCorrect"></li>
+            <li id = "FourthCorrect"></li>
+            <li id = "FifthCorrect"></li>
+            <li id = "SixthCorrect"></li>
+        </ol>
+        <button type="button" class="btn btn-primary btn-lg" id ="resetbutton">Try Again!</button>
+    </div>
+    
+</div>
+
+
+
+
+
+       
+            
+              
+              
+    </div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
