@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#questionNumber, #question, #timer{
+    color: gray;
+}
+#timerAlert{
+    background-color: white;
+    color: darkgreen;
+    width: 20%;
+    text-align: center;
+    
+}
+
+#startthequiz, #resetbutton  {
+    background-color: green;
+}
+
+#topimage {
+    background-image: url(../images/ww1trench.jpg);
+}
+
+.answerbutton {
+    background-color: dimgrey;
+}
+
+#numbercorrect, #numberwrong, #listheading {
+    color: gray;
+}
+
+ol{
+    color: gray;
+    font-size: 20px;
+}
+
+#scoreboardimage {
+    height: 525px;
+    width: 735px;
+}

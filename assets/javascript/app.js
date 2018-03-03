@@ -1,9 +1,4 @@
-//set timer to give user a limmited time to finish quiz
-//create a trivia form of multiple choice questions
-//prevent user from choosing more than one answer
-//when timer runs out, page reveals number of questions answered correctly and incorrreclty 
-//create function to load next question after question has been answered
-//create function to show score/end game
+
 
 
 $(document).ready(function(){
@@ -70,6 +65,7 @@ function decrement() {
     if (timer === 0) {
         stop();
         $("#timerAlert").html("Time's up!");
+        nextQuestion();
     }
 }
 
@@ -78,9 +74,9 @@ function stop() {
    
   }
 
-  function tenSeconds() {
-
-    console.log("5 seconds left");
+  function threeSeconds() {
+    $("#timerAlert").empty()
+    
   }
   
 
@@ -110,16 +106,19 @@ function nextQuestion() {
 }
         
 function endGame() {
-    $("#quiz").remove();
+    $("#quiz").hide();
     $("#timerAlert").empty()
     $("#resetbutton").show()
     $("#scoreboard").show()
     scoreAndanswers()
 }
+
+
         
 function scoreAndanswers () {
     $("#numbercorrect").text("Total Correct:" + " " + rightAnswers)
     $("#numberwrong").text("Total Incorrect:" + " " + wrongAnswers)
+    $("#listheading").text("Study up! Here are the correct answers:")
     $("#FirstCorrect").text("World War I, originally known as the Great War, lasted from 1914-1918.")
     $("#SecondCorrect").text("The event that sparked World War I was the assassination of Archduke Franz Ferdinand, heir to the Austro-Hungarian Empire.")
     $("#ThirdCorrect").text("Russia was the first major world power to support the Serbians.")
@@ -132,30 +131,25 @@ function checkAnswer() {
     if (userResponse == questions[questionIndex].correctAnswer){
         $("#timerAlert").text("Correct!");
         rightAnswers++;
-        console.log(rightAnswers)
-        setTimeout(tenSeconds, 1000 * 10);
+        setTimeout(threeSeconds, 3000);
         stop();
         $("#timer").empty(timer);
-        //$("#timerAlert").empty();
         nextQuestion()
-       
     }
+           
     else if (userResponse !== questions[questionIndex].correctAnswer){
         $("#timerAlert").text("Wrong!");
         wrongAnswers++;
-        console.log(wrongAnswers)
-        setTimeout(tenSeconds, 1000 * 10);
+        setTimeout(threeSeconds, 3000);
         stop();
         $("#timer").empty(timer);
-        
         nextQuestion()
+       
+        
     }
 }
 
 	
-
-
-
 $("#startthequiz").on("click", function() { 
     $("#startthequiz").hide();
     inputQuestion();
@@ -184,7 +178,32 @@ $("#answer4").on("click", function() {
     checkAnswer(3);
     });
 
+    function reset(){
+        $("#startthequiz").show();
+        $("#quiz").show();
+        rightAnswers = 0;
+        wrongAnswers = 0;
+        questionIndex = 0;
+        timer = 15;
+        $("#startthequiz").on("click", function(){ 
+            $("#startthequiz").hide();
+            inputQuestion();
+            
+        })
+    }
 
+
+    $("#resetbutton").on("click", function() { 
+        $("#resetbutton").hide();
+         $("#scoreboard").hide();
+        //$("#startthequiz").show();
+        $("#questionNumber").empty();
+        $("#question").empty();
+        $(".answerbutton").empty();
+        reset ();
+        
+    })
+    
 
 
 
