@@ -20,6 +20,7 @@ body {
 
 #topimage {
     background-image: url(../images/ww1trench.jpg);
+    background-size: cover;
 }
 
 .answerbutton {
